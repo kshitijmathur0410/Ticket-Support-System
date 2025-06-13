@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | Ticketing System</title>
+  <link rel="stylesheet" href="/css/homeStyles.css">
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="navbar-left">Raster TechSupport</div>
+    <div class="navbar-right">
+      <a href="/login" class="nav-link">Login</a>
+      <a href="/register" class="nav-link">Register</a>      
+      <button id="toggleTheme" class="theme-toggle-btn">🌙 / ☀️</button>
+     
+    </div>
+  </nav>
+
+  <!-- <div class="theme-toggle">
+    <button id="toggleTheme">🌙 / ☀️</button>
+  </div> -->
+  <div class="hero">
+    <div class="content">
+      <h1>Welcome to the Ticket Support System</h1>
+      <p>Manage and create your support tickets with ease.</p>
+      <div class="buttons">
+        <a href="/login" class="btn btn-primary">Login</a>
+        <a href="/create-task" class="btn btn-success">Create Ticket</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    Created By Kshitij Mathur
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleTheme');
+    toggleBtn.addEventListener('click', () => {
+      const root = document.documentElement;
+      if (root.getAttribute('data-theme') === 'dark') {
+        root.setAttribute('data-theme', 'light');
+      } else {
+        root.setAttribute('data-theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
+
