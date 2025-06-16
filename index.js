@@ -7,6 +7,7 @@ import validationMiddleware from './src/middlewares/validation.middleware.js';
 import { uploadFile } from './src/middlewares/file-upload.middleware.js';
 import session from 'express-session';
 import { auth } from './src/middlewares/auth.middleware.js';
+import { fileURLToPath } from 'url';
 
 const app = express();
 
@@ -26,9 +27,12 @@ app.use(ejsLayouts);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.set(
   'views',
-  path.join(path.resolve(), 'src', 'views')
+  path.join(__dirname, 'src', 'views')
 );
 
 app.get('/', productsController.getHomepage);
